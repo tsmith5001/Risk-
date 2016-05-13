@@ -5,11 +5,11 @@ public class Classroom extends Building{
 	String name;
 	
  public Classroom(int troops,int x2,int y2,String names){
-//	 name=names;
-//	 troop= troops;
-//	 x=x2;
-//	 y=y2;
-	 super();
+	 name=names;
+	 troop= troops;
+	 x=x2;
+	 y=y2;
+	 //super();
 	 name = names;
 	 
  }

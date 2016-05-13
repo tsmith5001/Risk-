@@ -14,6 +14,7 @@ public class Building {
 		//x=startx;
 		//y=starty;
 		objs = new ArrayList<Building>();
+		//asdf
 	}
 	public void draw(Graphics g){
 		//for(int x = 0; x<objs.size();x++){
