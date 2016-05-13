@@ -6,7 +6,7 @@ public class Building {
 
 	int numTroops, x,y;
 	ArrayList<Building> objs;
-	GraphicsPanel graph = new GraphicsPanel();
+	//GraphicsPanel graph;// = new GraphicsPanel();
 	
 	public Building() {
 		//player, loc
@@ -14,7 +14,6 @@ public class Building {
 		//x=startx;
 		//y=starty;
 		objs = new ArrayList<Building>();
-		//asdf
 	}
 	public void draw(Graphics g){
 		//for(int x = 0; x<objs.size();x++){
