@@ -31,6 +31,10 @@ public class Building {
 			//g.setColor(Color.GREEN);
 		//}
 	}
+	public void drawLargeBuild(Graphics g, int i, int j){
+		g.setColor(Color.GRAY);
+		g.fillRect(i, j, 80, 60);
+	}
 	public int getX(){
 		return x;
 	}

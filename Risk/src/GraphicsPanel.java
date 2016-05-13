@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class GraphicsPanel extends JPanel {
-	final int WIDTH = 1000, HEIGHT = 1000;
+	final int WIDTH = 1000, HEIGHT = 800;
 	private RiskBoard world;
 	private Classroom obj;
 	private BufferedImage bkgrnd;
@@ -20,13 +20,9 @@ public class GraphicsPanel extends JPanel {
 	
 	public GraphicsPanel(){
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		System.out.println("yo");
 		this.setLayout(null);
-		System.out.println("sup");
 		world = new RiskBoard(this);
-		System.out.println("wrong");
 		setUpBackground();
-		System.out.println("ayeee");
 		setUpClicks();
 	}
 
@@ -48,13 +44,15 @@ public class GraphicsPanel extends JPanel {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				System.out.println("Just pressed: "+e);
-				mousex = e.getX();
-				mousey = e.getY();
-				repaint();
+				mousePressed = true;
+				
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				System.out.println("Just released: "+e);
+				mousex = e.getX();
+				mousey = e.getY();
+				repaint();
 			}
 			
 		});
