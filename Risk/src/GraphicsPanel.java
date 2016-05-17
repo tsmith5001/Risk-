@@ -82,12 +82,18 @@ public class GraphicsPanel extends JPanel {
 		drawBackground(g);
 		System.out.println("repainting");
 		world.draw(g);
+		//repaint();
 		
 	}
-
+	public int getmouseX(){
+		return mousex;
+	}
+	public int getmouseY(){
+		return mousey;
+	}
 	private void drawBackground(Graphics g) {
 		int x = this.BCKGRD_W/2-this.getWidth()/2;
-		double step = this.BCKGRD_W/360.0;
+		//double step = this.BCKGRD_W/360.0;
 		g.drawImage(this.bkgrnd, 0,0,this.getWidth(), this.getHeight(),null);
 		if(x>= this.bkgrnd.getWidth()){
 			x = x-this.bkgrnd.getWidth()*2;

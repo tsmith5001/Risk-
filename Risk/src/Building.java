@@ -5,15 +5,14 @@ import java.util.ArrayList;
 public class Building {
 
 	int numTroops, x,y;
-	ArrayList<Building> objs;
-	//GraphicsPanel graph;// = new GraphicsPanel();
+	private ArrayList<Building> pile;
 	
 	public Building() {
-		//player, loc
-		//numTroops = numTroops1;
-		//x=startx;
-		//y=starty;
-		objs = new ArrayList<Building>();
+		
+	}
+	public void add(Building b){
+		pile.add(b);
+		System.out.println(pile);
 	}
 	public void draw(Graphics g){
 		//for(int x = 0; x<objs.size();x++){
@@ -31,9 +30,22 @@ public class Building {
 			//g.setColor(Color.GREEN);
 		//}
 	}
+	public void changeColor(Graphics g, int i, int j){
+		g.setColor(Color.BLUE);
+		g.fillRect(i, j, 60, 40);
+	}
 	public void drawLargeBuild(Graphics g, int i, int j){
 		g.setColor(Color.GRAY);
 		g.fillRect(i, j, 80, 60);
+	}
+	public void click(Graphics g,int tX, int tY){
+		//Building tempfrontCard = pile.get();
+		Building b1 = new Building();
+		clickedDraw(b1, g,tX, tY);
+	}
+	private void clickedDraw(Building buildsMe,Graphics g, int x, int y) {
+		// TODO Auto-generated method stub
+		buildsMe.changeColor(g, x, y);
 	}
 	public int getX(){
 		return x;
