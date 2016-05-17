@@ -1,12 +1,16 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class GraphicsPanel extends JPanel {
@@ -17,6 +21,9 @@ public class GraphicsPanel extends JPanel {
 	private int BCKGRD_W ;
 	private int mousex = 0, mousey = 0;
 	public boolean mousePressed = false;
+	JButton PutTroopsButton = new JButton("Deploy Troops");
+	JButton DeployButton = new JButton("Deploy/Attack");
+	JButton ConfirmButton = new JButton("Confirm");
 	
 	public GraphicsPanel(){
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -29,6 +36,17 @@ public class GraphicsPanel extends JPanel {
 
 	private void setUpButtons() {
 		// TODO Auto-generated method stub
+		PutTroopsButton.addActionListener(new ActionListener() {
+		
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// What do you want to do when the button is clicked????
+				
+				repaint();
+			}
+			
+		});
 		
 	}
 
