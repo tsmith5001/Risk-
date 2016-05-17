@@ -9,7 +9,6 @@ public class Classroom extends Building{
 	 troop= troops;
 	 x=x2;
 	 y=y2;
-	 //super();
 	 name = names;
 	 
  }

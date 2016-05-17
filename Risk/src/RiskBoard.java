@@ -3,35 +3,54 @@ import java.util.ArrayList;
 
 public class RiskBoard {
 
-	int[] xcoord ={500,400,300,200,150,100,100,200,250,300,350,400,650,650,740};
-	int[] ycoord = {700,700,700,700,650,550,500,400,325,400,325,400,400,700,650};
+	int[] xcoord ={500,400,300,200,150,200,300,400,650,740};
+	int[] ycoord = {500,500,500,500,450,200,200,200,200,450};
+	int[] xcoordSide = {100,100,250,350,650};
+	int[] ycoordSide = {350,300,125,125,500};
 	ArrayList<Building> builds;
+	ArrayList<Building> Sidebuilds;
 	GraphicsPanel graph;
 	Building b= new Building();
+	
 	public RiskBoard(GraphicsPanel graphicsPanel) {
 		graph = graphicsPanel;
 		builds = new ArrayList<Building>();
+		Sidebuilds = new ArrayList<Building>();
 		for (int j = 0; j < xcoord.length; j++) {
 				builds.add(new Building());
 			}
-		System.out.println("xcoords: " +xcoord);
-		System.out.println("ycoords: " +ycoord);
+		for(int w=0; w<xcoordSide.length;w++){
+			Sidebuilds.add(new Building());
+		}
+	
 	}
 	
 	public void draw(Graphics g){
 		for(int x = 0; x<builds.size();x++){
-			b.add(builds.get(x));
-			builds.get(x).drawBuilding(g, xcoord[x], ycoord[x]);
-			
+			builds.get(x).drawBuilding(g, xcoord[x], ycoord[x]);	
+		}
+		for(int y = 0; y<Sidebuilds.size();y++){
+			builds.get(y).drawSidewaysBuilding(g, xcoordSide[y], ycoordSide[y]);
 		}
 		
+		
 	}
-	public void loc(Graphics g, int tX, int tY) {
-		for(int x = 0; x<builds.size();x++){
-			if(graph.isPressed()==true && graph.getmouseX() >=xcoord[x]+40 && graph.getmouseX() <=xcoord[x] && graph.getmouseY() == ycoord[x] &&graph.getmouseY() == ycoord[x]+60){
-				builds.get(x).changeColor(g,xcoord[x], ycoord[x]);
-				System.out.println("YOU CLICKED A PILE MAN");
+	public void Clickloc(Graphics g, int tX, int tY) {
+		if(graph.isPressed() == true){
+			for(int x = 0; x<builds.size();x++){
+				if(graph.getmouseX() <=xcoord[x]+40 && graph.getmouseX() >=xcoord[x] 
+						&& graph.getmouseY() >= ycoord[x] &&graph.getmouseY() <= ycoord[x]+60){
+					builds.get(x).click(g, xcoord[x], ycoord[x]);
+				}
+
 			}
+			for(int y = 0; y<Sidebuilds.size();y++){
+				if(graph.getmouseX() <= xcoordSide[y]+60 && graph.getmouseX()>=xcoordSide[y]
+						&& graph.getmouseY()>= ycoordSide[y] && graph.getmouseY() <= ycoordSide[y]+40 ){
+					Sidebuilds.get(y).clickSide(g, xcoordSide[y], ycoordSide[y]);
+				}
+			}
+			
 		}
 	}
 

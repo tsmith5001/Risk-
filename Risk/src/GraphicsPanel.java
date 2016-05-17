@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class GraphicsPanel extends JPanel {
-	final int WIDTH = 1000, HEIGHT = 800;
+	final int WIDTH = 900, HEIGHT = 600;
 	private RiskBoard world;
 	private Classroom obj;
 	private BufferedImage bkgrnd;
@@ -23,7 +23,13 @@ public class GraphicsPanel extends JPanel {
 		this.setLayout(null);
 		world = new RiskBoard(this);
 		setUpBackground();
+		setUpButtons();
 		setUpClicks();
+	}
+
+	private void setUpButtons() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void setUpClicks() {
@@ -82,7 +88,7 @@ public class GraphicsPanel extends JPanel {
 		drawBackground(g);
 		System.out.println("repainting");
 		world.draw(g);
-		//repaint();
+		world.Clickloc(g,mousex, mousey);
 		
 	}
 	public int getmouseX(){
@@ -93,7 +99,6 @@ public class GraphicsPanel extends JPanel {
 	}
 	private void drawBackground(Graphics g) {
 		int x = this.BCKGRD_W/2-this.getWidth()/2;
-		//double step = this.BCKGRD_W/360.0;
 		g.drawImage(this.bkgrnd, 0,0,this.getWidth(), this.getHeight(),null);
 		if(x>= this.bkgrnd.getWidth()){
 			x = x-this.bkgrnd.getWidth()*2;
