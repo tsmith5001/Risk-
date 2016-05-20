@@ -7,20 +7,20 @@ public class RiskBoard {
 	int[] ycoord = {500,500,500,500,450,200,200,200,200,450};
 	int[] xcoordSide = {100,100,250,350,650};
 	int[] ycoordSide = {350,300,125,125,500};
-	ArrayList<Building> builds;
-	ArrayList<Building> Sidebuilds;
+	ArrayList<Classroom> builds;
+	ArrayList<Classroom> Sidebuilds;
 	GraphicsPanel graph;
 	Building b= new Building();
 	
 	public RiskBoard(GraphicsPanel graphicsPanel) {
 		graph = graphicsPanel;
-		builds = new ArrayList<Building>();
-		Sidebuilds = new ArrayList<Building>();
+		builds = new ArrayList<Classroom>();
+		Sidebuilds = new ArrayList<Classroom>();
 		for (int j = 0; j < xcoord.length; j++) {
-				builds.add(new Building());
+				builds.add(new Classroom(j, j, j, null));
 			}
 		for(int w=0; w<xcoordSide.length;w++){
-			Sidebuilds.add(new Building());
+			Sidebuilds.add(new Classroom(w, w, w, null));
 		}
 	
 	}

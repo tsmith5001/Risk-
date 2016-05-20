@@ -35,7 +35,7 @@ public class GraphicsPanel extends JPanel {
 	}
 
 	private void setUpButtons() {
-		// TODO Auto-generated method stub
+		// TODO Auto-geGanerated method stub
 		PutTroopsButton.addActionListener(new ActionListener() {
 		
 
