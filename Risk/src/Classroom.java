@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Classroom extends Building{
+public class Classroom{
 	int troop;
 	int x,y;
 	String name;
@@ -40,28 +40,30 @@ public class Classroom extends Building{
 	 return name;
  }
 	public int addTroops(){
-		return numTroops;
+		return getnumtroops();
 	}
 	
-	public void drawBuilding(Graphics g, int i, int j){
+	public void drawClassroom(Graphics g, int i, int j){
 		g.setColor(Color.GRAY);
-		g.fillRect(i, j, 40, 60);
+		g.fillRect(i, j, 20, 20);
+		g.setColor(Color.BLACK);
+		g.drawRect(i, j, 20, 20);
 	}
 	
-	public void drawSidewaysBuilding(Graphics g, int i, int j){
-		g.setColor(Color.GRAY);
-		g.fillRect(i, j, 60, 40);
-	}
+//	public void drawSidewaysBuilding(Graphics g, int i, int j){
+//		g.setColor(Color.GRAY);
+//		g.fillRect(i, j, 60, 40);
+//	}
 	
 	public void changeColor(Graphics g, int i, int j){
 		g.setColor(Color.BLUE);
-		g.fillRect(i, j, 40, 60);
+		g.fillRect(i, j, 20, 20);
 	}
 	
-	public void drawLargeBuild(Graphics g, int i, int j){
-		g.setColor(Color.GRAY);
-		g.fillRect(i, j, 80, 60);
-	}
+//	public void drawLargeBuild(Graphics g, int i, int j){
+//		g.setColor(Color.GRAY);
+//		g.fillRect(i, j, 80, 60);
+//	}
 	
 	public void click(Graphics g,int tX, int tY){
 		//Building tempfrontCard = pile.get();
@@ -82,22 +84,22 @@ public class Classroom extends Building{
 		return y;
 	}
 
-	public void clickSide(Graphics g, int i, int j) {
-		// TODO Auto-generated method stub
-		Classroom b1 = new Classroom(j, j, j, name);
-		clickedDrawSIDE(b1, g,i, j);
-	}
-
-	private void clickedDrawSIDE(Classroom b1, Graphics g, int i, int j) {
-		// TODO Auto-generated method stub
-		b1.changeSideColor(g, i,j);
-	}
-
-	private void changeSideColor(Graphics g, int i, int j) {
-		// TODO Auto-generated method stub
-		g.setColor(Color.BLUE);
-		g.fillRect(i, j, 60, 40);
-	}
+//	public void clickSide(Graphics g, int i, int j) {
+//		// TODO Auto-generated method stub
+//		Classroom b1 = new Classroom(j, j, j, name);
+//		clickedDrawSIDE(b1, g,i, j);
+//	}
+//
+//	private void clickedDrawSIDE(Classroom b1, Graphics g, int i, int j) {
+//		// TODO Auto-generated method stub
+//		b1.changeSideColor(g, i,j);
+//	}
+//
+//	private void changeSideColor(Graphics g, int i, int j) {
+//		// TODO Auto-generated method stub
+//		g.setColor(Color.BLUE);
+//		g.fillRect(i, j, 60, 40);
+//	}
  
  
 }
