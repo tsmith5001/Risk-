@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class GraphicsPanel extends JPanel {
-	final int WIDTH = 900, HEIGHT = 600;
+	final int WIDTH = 1000, HEIGHT = 600;
 	private RiskBoard world;
 	private Classroom obj;
 	private BufferedImage bkgrnd;
@@ -22,33 +22,25 @@ public class GraphicsPanel extends JPanel {
 	private int mousex = 0, mousey = 0;
 	public boolean mousePressed = false;
 	JButton PutTroopsButton = new JButton("Deploy Troops");
-	JButton DeployButton = new JButton("Deploy/Attack");
+	JButton DeployButton = new JButton("Transfer/Attack");
 	JButton ConfirmButton = new JButton("Confirm");
+	int numClicks = 0;
 	
 	public GraphicsPanel(){
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		this.setLayout(null);
 		world = new RiskBoard(this);
 		setUpBackground();
-		setUpButtons();
 		setUpClicks();
-	}
-
-	private void setUpButtons() {
-		// TODO Auto-geGanerated method stub
-		PutTroopsButton.addActionListener(new ActionListener() {
-		
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// What do you want to do when the button is clicked????
-				
-				repaint();
-			}
-			
-		});
+		this.add(PutTroopsButton);
+		PutTroopsButton.setBounds(825, 50, 150, 100);
+		this.add(DeployButton);
+		DeployButton.setBounds(825, 150, 150, 100);
+		this.add(ConfirmButton);
+		ConfirmButton.setBounds(825, 250, 150, 100);
 		
 	}
+
 
 	private void setUpClicks() {
 		// TODO Auto-generated method stub
@@ -69,16 +61,43 @@ public class GraphicsPanel extends JPanel {
 			public void mousePressed(MouseEvent e) {
 				System.out.println("Just pressed: "+e);
 				mousePressed = true;
-				
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				System.out.println("Just released: "+e);
 				mousex = e.getX();
 				mousey = e.getY();
+				numClicks++;
 				repaint();
 			}
 			
+		});
+	}
+	private int getNumClicks(){
+		return numClicks;
+	}
+	private void setUpButtons() {
+		// TODO Auto-generated method stub
+		PutTroopsButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// What do you want to do when the button is clicked????
+				
+			}
+		});
+		DeployButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// What do you want to do when the button is clicked????
+				
+			}
+		});
+		ConfirmButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// What do you want to do when the button is clicked????
+				
+			}
 		});
 	}
 	public boolean isPressed(){
@@ -104,10 +123,8 @@ public class GraphicsPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		drawBackground(g);
-		System.out.println("repainting");
 		world.draw(g);
 		world.Clickloc(g,mousex, mousey);
-		
 	}
 	public int getmouseX(){
 		return mousex;
@@ -121,5 +138,6 @@ public class GraphicsPanel extends JPanel {
 		if(x>= this.bkgrnd.getWidth()){
 			x = x-this.bkgrnd.getWidth()*2;
 		}
+		
 	}
 }

@@ -1,5 +1,9 @@
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
 
 public class RiskBoard {
 
@@ -36,6 +40,9 @@ public class RiskBoard {
 	ArrayList<Classroom> P;
 	GraphicsPanel graph;
 	
+	
+	
+	
 	public RiskBoard(GraphicsPanel graphicsPanel) {
 		graph = graphicsPanel;
 		off = new ArrayList<Classroom>();
@@ -55,6 +62,7 @@ public class RiskBoard {
 		P = new ArrayList<Classroom>();
 		for (int j = 0; j < Office.length; j++) {
 			off.add(new Classroom(j, j, j, null));
+			
 		}
 		for (int j = 0; j < Bbuilding.length; j++) {
 			B.add(new Classroom(j, j, j, null));
@@ -102,136 +110,192 @@ public class RiskBoard {
 		
 	}
 	
+	
+
 	public void draw(Graphics g){
+		int y = 1;
 		for(int x = 0; x<off.size();x++){
-			off.get(x).drawClassroom(g, Office[x], Office[x+1]);	
+			off.get(x).drawClassroom(g, Office[x], Office[x+1]);
+			g.drawString("Off", Office[x], Office[x+1]+20);
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<B.size();x++){
-			B.get(x).drawClassroom(g, Bbuilding[x], Bbuilding[x+1]);	
+			
+			B.get(x).drawClassroom(g, Bbuilding[x], Bbuilding[x+1]);
+			g.drawString("B"+y,Bbuilding[x], Bbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<C.size();x++){
-			C.get(x).drawClassroom(g, Cbuilding[x], Cbuilding[x+1]);	
+			C.get(x).drawClassroom(g, Cbuilding[x], Cbuilding[x+1]);
+			g.drawString("C"+y,Cbuilding[x], Cbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<D.size();x++){
-			D.get(x).drawClassroom(g, Dbuilding[x], Dbuilding[x+1]);	
+			D.get(x).drawClassroom(g, Dbuilding[x], Dbuilding[x+1]);
+			g.drawString("D"+y,Dbuilding[x], Dbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<E.size();x++){
-			E.get(x).drawClassroom(g, Ebuilding[x], Ebuilding[x+1]);	
+			E.get(x).drawClassroom(g, Ebuilding[x], Ebuilding[x+1]);
+			g.drawString("E"+y,Ebuilding[x], Ebuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<F.size();x++){
-			F.get(x).drawClassroom(g, Fbuilding[x], Fbuilding[x+1]);	
+			F.get(x).drawClassroom(g, Fbuilding[x], Fbuilding[x+1]);
+			g.drawString("F"+y,Fbuilding[x], Fbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<G.size();x++){
-			G.get(x).drawClassroom(g, Gbuilding[x], Gbuilding[x+1]);	
+			G.get(x).drawClassroom(g, Gbuilding[x], Gbuilding[x+1]);
+			g.drawString("G"+y,Gbuilding[x], Gbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<H.size();x++){
-			H.get(x).drawClassroom(g, Hbuilding[x], Hbuilding[x+1]);	
+			H.get(x).drawClassroom(g, Hbuilding[x], Hbuilding[x+1]);
+			g.drawString("H"+y,Hbuilding[x], Hbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<I.size();x++){
-			I.get(x).drawClassroom(g, Ibuilding[x], Ibuilding[x+1]);	
+			I.get(x).drawClassroom(g, Ibuilding[x], Ibuilding[x+1]);
+			g.drawString("I"+y,Ibuilding[x], Ibuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<J.size();x++){
-			J.get(x).drawClassroom(g, Jbuilding[x], Jbuilding[x+1]);	
+			J.get(x).drawClassroom(g, Jbuilding[x], Jbuilding[x+1]);
+			g.drawString("J"+y,Jbuilding[x], Jbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<L.size();x++){
-			L.get(x).drawClassroom(g, Lbuilding[x], Lbuilding[x+1]);	
+			L.get(x).drawClassroom(g, Lbuilding[x], Lbuilding[x+1]);
+			g.drawString("L"+y,Lbuilding[x], Lbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<M.size();x++){
-			M.get(x).drawClassroom(g, Mbuilding[x], Mbuilding[x+1]);	
+			M.get(x).drawClassroom(g, Mbuilding[x], Mbuilding[x+1]);
+			g.drawString("M"+y,Mbuilding[x], Mbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<Q.size();x++){
-			Q.get(x).drawClassroom(g, Qbuilding[x], Qbuilding[x+1]);	
+			Q.get(x).drawClassroom(g, Qbuilding[x], Qbuilding[x+1]);
+			g.drawString("Q"+y,Qbuilding[x], Qbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<Q1.size();x++){
-			Q1.get(x).drawClassroom(g, Q1building[x], Q1building[x+1]);	
+			Q1.get(x).drawClassroom(g, Q1building[x], Q1building[x+1]);
+			g.drawString("Q"+y,Qbuilding[x], Qbuilding[x+1]+20);
+			y++;
 			x++;
 		}
+		y=1;
 		for(int x = 0; x<P.size();x++){
-			P.get(x).drawClassroom(g, Pbuilding[x], Pbuilding[x+1]);	
+			P.get(x).drawClassroom(g, Pbuilding[x], Pbuilding[x+1]);
+			g.drawString("P"+y,Pbuilding[x], Pbuilding[x+1]+20);
+			y++;
 			x++;
 		}
-		
 	}
+	
 	public void Clickloc(Graphics g, int tX, int tY) {
 		if(graph.isPressed() == true){
-			for(int x = 0; x<off.size();x++){
+			for(int x = 0; x<off.size()-1;x++){
 				if(graph.getmouseX() <=Office[x]+20 && graph.getmouseX() >=Office[x] 
 						&& graph.getmouseY() >= Office[x+1] &&graph.getmouseY() <= Office[x+1]+20){
 					off.get(x).click(g, Office[x], Office[x+1]);
+					System.out.println("Office Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<B.size();x++){
+			for(int x = 0; x<B.size()-1;x++){
 				if(graph.getmouseX() <=Bbuilding[x]+20 && graph.getmouseX() >=Bbuilding[x] 
 						&& graph.getmouseY() >= Bbuilding[x+1] &&graph.getmouseY() <= Bbuilding[x+1]+20){
 					B.get(x).click(g, Bbuilding[x], Bbuilding[x+1]);
+					System.out.println("B Building");
+
 					x++;
 				}
 
 			}
-			for(int x = 0; x<C.size();x++){
+			for(int x = 0; x<C.size()-1;x+=2){
 				if(graph.getmouseX() <=Cbuilding[x]+20 && graph.getmouseX() >=Cbuilding[x] 
 						&& graph.getmouseY() >= Cbuilding[x+1] &&graph.getmouseY() <= Cbuilding[x+1]+20){
 					C.get(x).click(g, Cbuilding[x], Cbuilding[x+1]);
+					System.out.println("C Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<D.size();x++){
+			for(int x = 0; x<D.size()-1;x++){
 				if(graph.getmouseX() <=Dbuilding[x]+20 && graph.getmouseX() >=Dbuilding[x] 
 						&& graph.getmouseY() >= Dbuilding[x+1] &&graph.getmouseY() <= Dbuilding[x+1]+20){
 					D.get(x).click(g, Dbuilding[x], Dbuilding[x+1]);
+					System.out.println("D Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<E.size();x++){
+			for(int x = 0; x<E.size()-1;x++){
 				if(graph.getmouseX() <=Ebuilding[x]+20 && graph.getmouseX() >=Ebuilding[x] 
 						&& graph.getmouseY() >= Ebuilding[x+1] &&graph.getmouseY() <= Ebuilding[x+1]+20){
 					E.get(x).click(g, Ebuilding[x], Ebuilding[x+1]);
+					System.out.println("E Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<F.size();x++){
+			for(int x = 0; x<F.size()-1;x++){
 				if(graph.getmouseX() <=Fbuilding[x]+20 && graph.getmouseX() >=Fbuilding[x] 
 						&& graph.getmouseY() >= Fbuilding[x+1] &&graph.getmouseY() <= Fbuilding[x+1]+20){
 					F.get(x).click(g, Fbuilding[x], Fbuilding[x+1]);
+					System.out.println("F Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<G.size();x++){
+			for(int x = 0; x<G.size()-1;x++){
 				if(graph.getmouseX() <=Gbuilding[x]+20 && graph.getmouseX() >=Gbuilding[x] 
 						&& graph.getmouseY() >= Gbuilding[x+1] &&graph.getmouseY() <= Gbuilding[x+1]+20){
 					G.get(x).click(g, Gbuilding[x], Gbuilding[x+1]);
+					System.out.println("G Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<H.size();x++){
+			for(int x = 0; x<H.size()-1;x++){
 				if(graph.getmouseX() <=Hbuilding[x]+20 && graph.getmouseX() >=Hbuilding[x] 
 						&& graph.getmouseY() >= Hbuilding[x+1] &&graph.getmouseY() <= Hbuilding[x+1]+20){
 					H.get(x).click(g, Hbuilding[x], Hbuilding[x+1]);
+					System.out.println("H Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<I.size();x++){
+			for(int x = 0; x<I.size()-1;x++){
 				if(graph.getmouseX() <=Ibuilding[x]+20 && graph.getmouseX() >=Ibuilding[x] 
 						&& graph.getmouseY() >= Ibuilding[x+1] &&graph.getmouseY() <= Ibuilding[x+1]+20){
 					I.get(x).click(g, Ibuilding[x], Ibuilding[x+1]);
@@ -239,23 +303,25 @@ public class RiskBoard {
 				}
 
 			}
-			for(int x = 0; x<J.size();x++){
+			for(int x = 0; x<J.size()-1;x++){
 				if(graph.getmouseX() <=Jbuilding[x]+20 && graph.getmouseX() >=Jbuilding[x] 
 						&& graph.getmouseY() >= Jbuilding[x+1] &&graph.getmouseY() <= Jbuilding[x+1]+20){
 					J.get(x).click(g, Jbuilding[x], Jbuilding[x+1]);
+					System.out.println("J Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<L.size();x++){
+			for(int x = 0; x<L.size()-1;x++){
 				if(graph.getmouseX() <=Lbuilding[x]+20 && graph.getmouseX() >=Lbuilding[x] 
 						&& graph.getmouseY() >= Lbuilding[x+1] &&graph.getmouseY() <= Lbuilding[x+1]+20){
 					L.get(x).click(g, Lbuilding[x], Lbuilding[x+1]);
+					System.out.println("L Building");
 					x++;
 				}
 
 			}
-			for(int x = 0; x<M.size();x++){
+			for(int x = 0; x<M.size()-1;x++){
 				if(graph.getmouseX() <=Mbuilding[x]+20 && graph.getmouseX() >=Mbuilding[x] 
 						&& graph.getmouseY() >= Mbuilding[x+1] &&graph.getmouseY() <= Mbuilding[x+1]+20){
 					M.get(x).click(g, Mbuilding[x], Mbuilding[x+1]);
@@ -263,7 +329,7 @@ public class RiskBoard {
 				}
 
 			}
-			for(int x = 0; x<Q.size();x++){
+			for(int x = 0; x<Q.size()-1;x++){
 				if(graph.getmouseX() <=Qbuilding[x]+20 && graph.getmouseX() >=Qbuilding[x] 
 						&& graph.getmouseY() >= Qbuilding[x+1] &&graph.getmouseY() <= Qbuilding[x+1]+20){
 					Q.get(x).click(g, Qbuilding[x], Qbuilding[x+1]);
@@ -271,7 +337,7 @@ public class RiskBoard {
 				}
 
 			}
-			for(int x = 0; x<Q1.size();x++){
+			for(int x = 0; x<Q1.size()-1;x++){
 				if(graph.getmouseX() <=Q1building[x]+20 && graph.getmouseX() >=Q1building[x] 
 						&& graph.getmouseY() >= Q1building[x+1] &&graph.getmouseY() <= Q1building[x+1]+20){
 					Q1.get(x).click(g, Q1building[x], Q1building[x+1]);
@@ -279,7 +345,7 @@ public class RiskBoard {
 				}
 
 			}
-			for(int x = 0; x<P.size();x++){
+			for(int x = 0; x<P.size()-1;x++){
 				if(graph.getmouseX() <=Pbuilding[x]+20 && graph.getmouseX() >=Pbuilding[x] 
 						&& graph.getmouseY() >= Pbuilding[x+1] &&graph.getmouseY() <= Pbuilding[x+1]+20){
 					P.get(x).click(g, Pbuilding[x], Pbuilding[x+1]);
