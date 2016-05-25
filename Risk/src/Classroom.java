@@ -6,7 +6,7 @@ public class Classroom{
 	int x,y;
 	String name;
 	//int numClicks = 0;
-	//int total = this.getnumtroops()+troop;
+	int total = this.getnumtroops()+troop;
 	
  public Classroom(int troops,int x2,int y2,String names){
 	 name=names;
@@ -47,23 +47,23 @@ public void addtroop(){
 	
 	public void drawClassroom(Graphics g, int i, int j){
 		g.setColor(Color.GRAY);
-		g.fillRect(i, j, 20, 20);
+		g.fillRect(i, j, 40, 40);
 		g.setColor(Color.BLACK);
-		g.drawRect(i, j, 20, 20);
+		g.drawRect(i, j, 40, 40);
 	}
 	
 	public void changeColor(Graphics g, int i, int j){
 		g.setColor(Color.BLUE);
-		g.fillRect(i, j, 20, 20);
+		g.fillRect(i, j, 40, 40);
 		g.setColor(Color.BLACK);
-		g.drawString(""+this.getnumtroops(), i, j+20);
+		g.drawString(""+total, i, j+40);
 	}
 	
 	
 	public void click(Graphics g,int tX, int tY){
 		Classroom b1 = new Classroom(this.getnumtroops(), tX, tY, name);
 		clickedDraw(b1, g,tX, tY,b1.getnumtroops());
-		this.addtroop();
+		//this.addtroop();
 	}
 	
 	private void clickedDraw(Classroom buildsMe,Graphics g, int x, int y,int troops) {

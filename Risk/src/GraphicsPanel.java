@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class GraphicsPanel extends JPanel {
-	final int WIDTH = 1000, HEIGHT = 600;
+	final int WIDTH = 1200, HEIGHT = 800;
 	private RiskBoard world;
 	private Classroom obj;
 	private BufferedImage bkgrnd;
@@ -38,7 +38,7 @@ public class GraphicsPanel extends JPanel {
 		DeployButton.setBounds(825, 150, 150, 100);
 		this.add(ConfirmButton);
 		ConfirmButton.setBounds(825, 250, 150, 100);
-		
+		setUpButtons();
 	}
 
 
@@ -82,7 +82,12 @@ public class GraphicsPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// What do you want to do when the button is clicked????
-				
+				if(world.canAddTroop()==true){	
+					System.out.println("i got here");
+					obj.addtroop();
+					repaint();
+					System.out.println("Repainting man");
+				}
 			}
 		});
 		DeployButton.addActionListener(new ActionListener() {
