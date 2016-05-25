@@ -6,7 +6,7 @@ public class Classroom{
 	int x,y;
 	String name;
 	//int numClicks = 0;
-	int total = this.getnumtroops()+troop;
+	int total;
 	
  public Classroom(int troops,int x2,int y2,String names){
 	 name=names;
@@ -14,7 +14,7 @@ public class Classroom{
 	 x=x2;
 	 y=y2;
 	 name = names;
-	 
+	 total = this.getnumtroops()+troop;
  }
 
 public void addtroop(){
